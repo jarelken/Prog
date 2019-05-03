@@ -1,0 +1,48 @@
+package ex3;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ *
+ * @author aluno
+ */
+public class Ex3 {
+    double tot = 0;
+    
+    public static void main(String[] args) {
+        Ex3 t = new Ex3();
+        int i = 0;
+        Scanner scan = new Scanner(System.in);
+        ArrayList<Pedido> lista = new ArrayList<>();
+        int menu = 0;
+        Boolean laco = true;
+        while (laco) {
+            System.out.println("Deseja adicionar produto?(1-SIM/0-NÃO)");
+            menu = scan.nextInt();
+            if (menu == 0) {
+                laco = false;
+            } else {
+                if (menu == 1) {
+                    Pedido pedido = new Pedido();
+                    System.out.println("Digite o produto:");
+                    pedido.setProduto(scan.next());
+                    System.out.println("Digite a quantidade:");
+                    pedido.setQuantidade(scan.nextInt());
+                    System.out.println("Digite o preço:");
+                    pedido.setPreco(scan.nextDouble());
+                    lista.add(pedido);
+                    i++;
+                } else {
+                    System.out.println("1-SIM/0-NÃO!");
+                }
+            }
+
+        }
+        for (int j = 0; j < lista.size(); j++) {
+            System.out.println("Produto: " + lista.get(j).getProduto());
+            t.tot = t.tot + lista.get(j).getTotal();
+        }
+        System.out.println("Preço Total: R$"+t.tot);
+    }
+    
+}
