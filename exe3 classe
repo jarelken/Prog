@@ -1,0 +1,39 @@
+package ex3;
+
+/**
+ *
+ * @author aluno
+ */
+public class Pedido {
+    private String produto;
+    private int quantidade=0;
+    private double preco=0;
+    //private double total = 0;
+    
+    public String getProduto(){
+        return produto;
+    }
+    
+    public void setProduto(String produto){
+        this.produto = produto;
+    }
+    
+    public int getQuantidade(){
+        return quantidade;
+    }
+    public void setQuantidade(int quantidade){
+        this.quantidade=quantidade;
+    }
+    
+    public double getPreco(){
+        return preco;
+    }
+    public void setPreco(double preco){
+       this.preco=preco;
+    }
+    
+    public double getTotal(){
+        return preco*quantidade;
+    }
+    
+}
